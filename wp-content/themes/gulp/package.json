@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "gulp-sass": "~0.7.1",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-jshint": "~1.5.1",
+    "gulp-uglify": "~0.2.1",
+    "gulp": "~3.5.6"
+  }
+}
