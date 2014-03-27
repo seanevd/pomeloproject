@@ -7,7 +7,30 @@ Version: 1.0
 Tags: blank, boilerplate, starting point, empty, starter kit, white
 */
 
+@import "libraries/pivotl";
+
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em
+}
+
+
 body {
 	font-size: 100%;
 	color: green;
+}
+
+header, footer {
+	background-color: #CCC;
+	padding: 1em 0;
+	width: 100%;
+}
+
+header {
+	margin-bottom: 1em;
+}
+
+footer {
+	margin-top: 1em;
 }
