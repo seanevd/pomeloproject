@@ -9,6 +9,9 @@ Tags: blank, boilerplate, starting point, empty, starter kit, white
 
 @import "libraries/pivotl";
 
+$Color1: #000;
+$Color2: #fff;
+
 $browser-context: 16;
 
 @function em($pixels, $context: $browser-context) {
@@ -19,18 +22,37 @@ $browser-context: 16;
 body {
 	font-size: 100%;
 	color: grey;
+	font-size: 1em;
 }
 
 header, footer {
-	background-color: #CCC;
-	padding: 1em 0;
+	padding: 1em 0 1em 0;
 	width: 100%;
 }
 
 header {
 	margin-bottom: 1em;
+	background-color: $Color1;
 }
 
 footer {
 	margin-top: 1em;
+	background-color: #CCC;
+}
+
+.nav-menu ul li{
+	display: inline-block;
+	margin-right: em(10);
+	a {
+		color: white;
+		&:visited {
+			color: #FFF;
+		}
+	}
+
+}
+
+.nav-menu ul {
+	margin-left: 0;
+	margin-bottom: 0;
 }

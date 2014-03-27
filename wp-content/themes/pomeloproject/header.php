@@ -58,7 +58,6 @@
 		<header>
 			<div class="row">
 				<div class="small-12 columns">
-					<h4>This is the header, we need to put navigation here.</h4>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 				</div>
 			</div>
