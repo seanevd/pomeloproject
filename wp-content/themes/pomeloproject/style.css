@@ -1244,7 +1244,7 @@ blockquote p {
     display: inherit !important; } }
 body {
   font-size: 100%;
-  color: green; }
+  color: grey; }
 
 header, footer {
   background-color: #CCC;
