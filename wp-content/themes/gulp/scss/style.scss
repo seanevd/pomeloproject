@@ -23,6 +23,7 @@ body {
 	font-size: 100%;
 	color: grey;
 	font-size: 1em;
+	font-family: 'Open Sans', helvetica, sans-serif;
 }
 
 header, footer {
@@ -40,8 +41,9 @@ footer {
 	background-color: #CCC;
 }
 
-.nav-menu ul li{
+.menu-navigation-container ul li{
 	display: inline-block;
+	font-size: em(22);
 	margin-right: em(10);
 	a {
 		color: white;
@@ -52,7 +54,7 @@ footer {
 
 }
 
-.nav-menu ul {
+.menu-navigation-container ul {
 	margin-left: 0;
 	margin-bottom: 0;
 }

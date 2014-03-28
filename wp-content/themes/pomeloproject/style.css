@@ -963,7 +963,8 @@ blockquote, blockquote p {
 body {
   font-size: 100%;
   color: grey;
-  font-size: 1em; }
+  font-size: 1em;
+  font-family: 'Open Sans', helvetica, sans-serif; }
 
 header, footer {
   padding: 1em 0 1em 0;
@@ -977,14 +978,15 @@ footer {
   margin-top: 1em;
   background-color: #CCC; }
 
-.nav-menu ul li {
+.menu-navigation-container ul li {
   display: inline-block;
+  font-size: 1.375em;
   margin-right: 0.625em; }
-  .nav-menu ul li a {
+  .menu-navigation-container ul li a {
     color: white; }
-    .nav-menu ul li a:visited {
+    .menu-navigation-container ul li a:visited {
       color: #FFF; }
 
-.nav-menu ul {
+.menu-navigation-container ul {
   margin-left: 0;
   margin-bottom: 0; }
