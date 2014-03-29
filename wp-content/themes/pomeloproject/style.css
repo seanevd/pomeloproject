@@ -972,7 +972,7 @@ body {
   color: #333333;
   font-size: 1em;
   font-family: 'museo_sans', helvetica, sans-serif;
-  background-color: #F2EFC2; }
+  background-color: #FBFBEE; }
 
 header, footer {
   padding: 0;
@@ -985,7 +985,7 @@ header {
 footer {
   margin-top: 1em;
   background-color: #D92232;
-  color: #F2EFC2; }
+  color: #FBFBEE; }
 
 a {
   color: #3F1316;
@@ -998,7 +998,7 @@ a {
 
 header img {
   display: inline-block;
-  background-color: #F2EFC2;
+  background-color: #FBFBEE;
   margin-right: 0.375em; }
 
 .logo-home {
@@ -1035,9 +1035,9 @@ header a {
   font-size: 1.375em;
   margin-right: 0.625em; }
   .nav-menu li a {
-    color: #F2EFC2; }
+    color: #FBFBEE; }
     .nav-menu li a:visited {
-      color: #F2EFC2; }
+      color: #FBFBEE; }
     .nav-menu li a:hover {
       color: #F1EA81; }
 
