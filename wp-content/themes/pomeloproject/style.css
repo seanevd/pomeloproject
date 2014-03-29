@@ -1003,37 +1003,35 @@ header img {
 
 .logo-home {
   width: 18em;
-  height: 6.6875em;
+  height: 6.9375em;
   background-image: url("images/pomelo-logo-sprite.png");
   display: inline-block;
-  background-position: 0 -8em;
+  background-position: 0 -7.875em;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
   .logo-home:hover {
-    background-position: 0 -0.4375em;
+    background-position: 0 -0.375em;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
 
 header .columns > div {
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: top; }
+  header .columns > div li > a {
+    line-height: 111px;
+    background-color: #333333;
+    padding: 0 0.5em; }
+    header .columns > div li > a:hover {
+      background-color: #FBFBEE;
+      color: #333333; }
 header .columns {
-  height: 6.6875em; }
+  height: 6.9375em; }
 header a {
-  vertical-align: top;
-  height: 0;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  margin-right: 0.5em; }
-  header a div {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    height: 100%; }
+  display: block; }
 
 .nav-menu li {
   display: inline-block;
-  font-size: 1.375em;
-  margin-right: 0.625em; }
+  font-size: 1.375em; }
   .nav-menu li a {
     color: #FBFBEE; }
     .nav-menu li a:visited {

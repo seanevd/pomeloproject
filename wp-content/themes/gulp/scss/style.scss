@@ -75,13 +75,13 @@ header img {
 
 .logo-home {
 	width: em(288);
-	height: em(107);
+	height: em(111);
 	background-image: url("images/pomelo-logo-sprite.png");
 	display: inline-block;
-	background-position: 0 em(-128);
+	background-position: 0 em(-126);
 	transition: all .3s;
 	&:hover {
-		background-position: 0 em(-7);
+		background-position: 0 em(-6);
 		transition: all .3s;
 	}
 }
@@ -89,29 +89,28 @@ header img {
 header {
 	.columns>div {
 		display: inline-block;
-		vertical-align: middle;
+		vertical-align: top;
+		li>a {
+			line-height: 111px;
+			background-color: $black;
+			padding: 0 em(8);
+			&:hover {
+				background-color: $white;
+				color: $black;
+			}
+		}
 	}
 	.columns {
-		height: em(107);
+		height: em(111);
 	}
 	a {
-		vertical-align: top;
-		height: 0;
-		padding-bottom: 0;
-		margin-bottom: 0;
-		margin-right: em(8);
-		div {
-			margin-bottom: 0;
-			padding-bottom: 0;
-			height: 100%;
-		}
+		display: block;
 	}
 }
 
 .nav-menu li{
 	display: inline-block;
 	font-size: em(22);
-	margin-right: em(10);
 	a {
 		color: $white;
 		&:visited {
