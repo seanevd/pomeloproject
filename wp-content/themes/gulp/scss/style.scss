@@ -9,8 +9,12 @@ Tags: blank, boilerplate, starting point, empty, starter kit, white
 
 @import "libraries/pivotl";
 
-$Color1: #000;
-$Color2: #fff;
+$white: #F2EFC2;
+$yellow: #F1EA81;
+$darkred: #3F1316;
+$red: #D92232;
+$brown: #8C6628;
+$black: #333333;
 
 $browser-context: 16;
 
@@ -18,43 +22,109 @@ $browser-context: 16;
 	@return #{$pixels/$context}em
 }
 
+@font-face {
+    font-family: 'museo_sans';
+    src: url('type/exljbris_-_museosans-500-webfont.eot');
+    src: url('type/exljbris_-_museosans-500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/exljbris_-_museosans-500-webfont.woff') format('woff'),
+         url('type/exljbris_-_museosans-500-webfont.ttf') format('truetype'),
+         url('type/exljbris_-_museosans-500-webfont.svg#museo_sans500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 body {
 	font-size: 100%;
-	color: grey;
+	color: $black;
 	font-size: 1em;
-	font-family: 'Museo Sans', helvetica, sans-serif;
+	font-family: 'museo_sans', helvetica, sans-serif;
+	background-color: $white;
 }
 
 header, footer {
-	padding: 1em 0 1em 0;
+	padding: 0;
 	width: 100%;
 }
 
 header {
 	margin-bottom: 1em;
-	background-color: $Color1;
+	background-color: $black;
 }
 
 footer {
 	margin-top: 1em;
-	background-color: #CCC;
+	background-color: $red;
+	color: $white;
 }
 
-.menu-navigation-container ul li{
+a {
+	color: $darkred;
+	transition: all .3s;
+	&:hover {
+		color: lighten($darkred, 15%);
+		transition: all .3s;
+	}
+}
+
+header img {
+	display: inline-block;
+	background-color: $white;
+	margin-right: em(6);
+}
+
+.logo-home {
+	width: em(288);
+	height: em(107);
+	background-image: url("images/pomelo-logo-sprite.png");
+	display: inline-block;
+	background-position: 0 em(-128);
+	transition: all .3s;
+	&:hover {
+		background-position: 0 em(-7);
+		transition: all .3s;
+	}
+}
+
+header {
+	.columns>div {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.columns {
+		height: em(107);
+	}
+	a {
+		vertical-align: top;
+		height: 0;
+		padding-bottom: 0;
+		margin-bottom: 0;
+		margin-right: em(8);
+		div {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			height: 100%;
+		}
+	}
+}
+
+.nav-menu li{
 	display: inline-block;
 	font-size: em(22);
 	margin-right: em(10);
 	a {
-		color: white;
+		color: $white;
 		&:visited {
-			color: #FFF;
+			color: $white;
+		}
+		&:hover {
+			color: $yellow;
 		}
 	}
 
 }
 
-.menu-navigation-container ul {
+.nav-menu {
 	margin-left: 0;
 	margin-bottom: 0;
 }

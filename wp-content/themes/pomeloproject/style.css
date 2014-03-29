@@ -960,33 +960,87 @@ blockquote, blockquote p {
   .show-for-print {
     display: inherit !important; } }
 
+@font-face {
+  font-family: 'museo_sans';
+  src: url('type/exljbris_-_museosans-500-webfont.eot');
+  src: url('type/exljbris_-_museosans-500-webfont.eot?#iefix') format('embedded-opentype'), url('type/exljbris_-_museosans-500-webfont.woff') format('woff'), url('type/exljbris_-_museosans-500-webfont.ttf') format('truetype'), url('type/exljbris_-_museosans-500-webfont.svg#museo_sans500') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 body {
   font-size: 100%;
-  color: grey;
+  color: #333333;
   font-size: 1em;
-  font-family: 'Museo Sans', helvetica, sans-serif; }
+  font-family: 'museo_sans', helvetica, sans-serif;
+  background-color: #F2EFC2; }
 
 header, footer {
-  padding: 1em 0 1em 0;
+  padding: 0;
   width: 100%; }
 
 header {
   margin-bottom: 1em;
-  background-color: #000; }
+  background-color: #333333; }
 
 footer {
   margin-top: 1em;
-  background-color: #CCC; }
+  background-color: #D92232;
+  color: #F2EFC2; }
 
-.menu-navigation-container ul li {
+a {
+  color: #3F1316;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  a:hover {
+    color: #7a252c;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+
+header img {
+  display: inline-block;
+  background-color: #F2EFC2;
+  margin-right: 0.375em; }
+
+.logo-home {
+  width: 18em;
+  height: 6.6875em;
+  background-image: url("images/pomelo-logo-sprite.png");
+  display: inline-block;
+  background-position: 0 -8em;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .logo-home:hover {
+    background-position: 0 -0.4375em;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+
+header .columns > div {
+  display: inline-block;
+  vertical-align: middle; }
+header .columns {
+  height: 6.6875em; }
+header a {
+  vertical-align: top;
+  height: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-right: 0.5em; }
+  header a div {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 100%; }
+
+.nav-menu li {
   display: inline-block;
   font-size: 1.375em;
   margin-right: 0.625em; }
-  .menu-navigation-container ul li a {
-    color: white; }
-    .menu-navigation-container ul li a:visited {
-      color: #FFF; }
+  .nav-menu li a {
+    color: #F2EFC2; }
+    .nav-menu li a:visited {
+      color: #F2EFC2; }
+    .nav-menu li a:hover {
+      color: #F1EA81; }
 
-.menu-navigation-container ul {
+.nav-menu {
   margin-left: 0;
   margin-bottom: 0; }
