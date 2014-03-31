@@ -15,4 +15,21 @@ function baw_hack_wp_title_for_home( $title )
 
 register_nav_menu( 'primary', 'Top Navigation' );
 
+
+function display_hero_image( $atts ){
+    extract( shortcode_atts( array(
+        'image' => 'Cambodia.jpg',
+    ), $atts ) );
+    $upload_dir = wp_upload_dir();
+    $image_dir = $upload_dir['url'] . '/' . $image;
+
+    echo '</div></div>';
+    echo '<div class="heroimage" style="background-image:url('. $image_dir .'); width: 100%; height: 500px;"></div>';
+    echo '<div class="row"><div class="small-12 columns">';
+
+}
+add_shortcode( 'hero', 'display_hero_image' );
+
+add_image_size( 'widest', 970 );
+
 ?>

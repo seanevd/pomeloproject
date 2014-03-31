@@ -127,3 +127,28 @@ header {
 	margin-left: 0;
 	margin-bottom: 0;
 }
+
+.heroimage {
+	width: 100%;
+	height: em(500);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+}
+
+
+//smallest screen size (mobile)
+@media only screen {
+
+}
+
+//medium screen size (tablet)
+@media only screen and (min-width: 40.063em) {
+
+}
+
+//large screen size (desktop)
+@media only screen and (min-width: 64.063em) {
+
+}

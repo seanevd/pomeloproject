@@ -1042,3 +1042,16 @@ header a {
 .nav-menu {
   margin-left: 0;
   margin-bottom: 0; }
+
+.heroimage {
+  width: 100%;
+  height: 31.25em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+@media only screen { }
+
+@media only screen and (min-width: 40.063em) { }
+
+@media only screen and (min-width: 64.063em) { }

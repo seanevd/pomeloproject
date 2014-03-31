@@ -22,14 +22,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
 	?>
-
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
-		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
@@ -89,7 +82,7 @@ get_header( 'shop' ); ?>
 		 */
 		//do_action( 'woocommerce_sidebar' );
 	?>
-	
+
 	</div>
 </div>
 
