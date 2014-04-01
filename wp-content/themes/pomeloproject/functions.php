@@ -21,7 +21,7 @@ function display_hero_image( $atts ){
         'image' => 'Cambodia.jpg',
     ), $atts ) );
     $upload_dir = wp_upload_dir();
-    $image_dir = $upload_dir['url'] . '/' . $image;
+    $image_dir = $upload_dir['baseurl'] . '/assets/' . $image;
 
     echo '</div></div>';
     echo '<div class="heroimage" style="background-image:url('. $image_dir .'); width: 100%; height: 500px;"></div>';

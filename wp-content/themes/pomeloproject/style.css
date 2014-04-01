@@ -1029,6 +1029,9 @@ header .columns {
 header a {
   display: block; }
 
+.homepage {
+  margin-bottom: 0; }
+
 .nav-menu li {
   display: inline-block;
   font-size: 1.375em; }
