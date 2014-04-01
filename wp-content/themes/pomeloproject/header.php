@@ -48,7 +48,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css">
-		<script src="<?php bloginfo('template_directory'); ?>/js/main.min.js"></script>
+		<script src="<?php bloginfo('template_directory'); ?>/js/all.min.js"></script>
 		
 		
 

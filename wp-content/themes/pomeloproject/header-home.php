@@ -20,7 +20,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
-		<title><?php wp_title( ); ?></title>
+		<title>Pomelo Project</title>
 		
 		<meta name="title" content="<?php
 			if (function_exists('is_tag') && is_tag()) {
@@ -48,7 +48,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css">
-		<script src="<?php bloginfo('template_directory'); ?>/js/main.min.js"></script>
+		<script src="<?php bloginfo('template_directory'); ?>/js/all.min.js"></script>
 		
 		
 
