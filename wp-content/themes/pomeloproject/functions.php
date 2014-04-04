@@ -26,9 +26,11 @@ function display_hero_image( $atts, $content = null ){
     echo '</div></div>';
     echo '<div class="heroimage" style="background-image:url('. $image_dir .'); width: 100%; height: 500px;">
         <div class="row">
-          <div clss="small-12 columns">';
-            echo $content;
-          echo '</div>
+          <div class="small-12 columns">
+            <div class="banner-text">';
+              echo $content;
+            echo '</div>
+            </div>
         </div>
       </div>';
     echo '<div class="row"><div class="small-12 columns">';

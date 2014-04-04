@@ -35,17 +35,17 @@ get_header( 'home' ); ?>
 				 * @hooked woocommerce_result_count - 20
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
-				do_action( 'woocommerce_before_shop_loop' );
+				//do_action( 'woocommerce_before_shop_loop' );
 			?>
-
+			<div class="home-content">
 			<?php woocommerce_product_loop_start(); ?>
 
 				<?php woocommerce_product_subcategories(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php wc_get_template_part( 'content', 'product' ); ?>
-
+					<div class="small-12 medium-6 large-4 columns">
+						<?php wc_get_template_part( 'content', 'product' ); ?>
+					</div>
 				<?php endwhile; // end of the loop. ?>
 
 			<?php woocommerce_product_loop_end(); ?>
@@ -64,7 +64,7 @@ get_header( 'home' ); ?>
 			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
 		<?php endif; ?>
-
+		</div>
 	<?php
 		/**
 		 * woocommerce_after_main_content hook

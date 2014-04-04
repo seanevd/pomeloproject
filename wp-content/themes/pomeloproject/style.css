@@ -1054,7 +1054,15 @@ header a {
   background-repeat: no-repeat;
   color: #FBFBEE; }
 
-@media only screen { }
+@media only screen {
+  .banner-text {
+    margin-top: 5.25em;
+    text-align: center; }
+  .home-content {
+    margin-top: 0.75em; }
+    .home-content li {
+      display: inline-block;
+      margin-top: 0.625em; } }
 
 @media only screen and (min-width: 40.063em) { }
 

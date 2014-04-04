@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header( 'shop' ); ?>
 
 <div class="row">
-	<div class="small-12 columns">
 
 	<?php
 		/**
@@ -49,7 +48,6 @@ get_header( 'shop' ); ?>
 		 */
 		//do_action( 'woocommerce_sidebar' );
 	?>
-	</div>
 </div>
 
 <?php get_footer( 'shop' ); ?>

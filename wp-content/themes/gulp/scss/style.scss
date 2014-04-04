@@ -108,6 +108,7 @@ header {
 	}
 }
 
+
 .homepage {
 	margin-bottom: 0;
 }
@@ -145,6 +146,20 @@ header {
 
 //smallest screen size (mobile)
 @media only screen {
+
+	
+	.banner-text {
+		margin-top:  em(84);
+		text-align: center;
+	}
+
+	.home-content {
+		margin-top: em(12);
+		li {
+			display: inline-block;
+			margin-top: em(10);
+		}
+	}
 
 }
 
