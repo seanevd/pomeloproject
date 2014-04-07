@@ -12,7 +12,6 @@ get_header(); ?>
 
 <div id="main-content" class="main-content row">
 	<div class="small-12 columns">
-		<p>This is basic template for pages. Delete this comment. Make sure that the content is wrapped in .columns.</p>
 		<?php
 					// Start the Loop.
 					while ( have_posts() ) : the_post();

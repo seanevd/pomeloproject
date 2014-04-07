@@ -59,6 +59,7 @@
 			<div class="row">
 				<div class="small-12 columns">
 					<div><a href="<?php echo home_url('/'); ?>"><div class="logo-home"></div></a></div>
+					<div class="nav-toggle">X</div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 				</div>
 			</div>

@@ -18,7 +18,7 @@ register_nav_menu( 'primary', 'Top Navigation' );
 
 function display_hero_image( $atts, $content = null ){
     extract( shortcode_atts( array(
-        'image' => 'Cambodia.jpg',
+        'image' => 'documentary.jpg',
     ), $atts ) );
     $upload_dir = wp_upload_dir();
     $image_dir = $upload_dir['baseurl'] . '/assets/' . $image;

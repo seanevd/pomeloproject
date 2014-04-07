@@ -24,7 +24,7 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_excerpt(); ?><a href="<?php the_permalink(); ?>">&rarr;</a>
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

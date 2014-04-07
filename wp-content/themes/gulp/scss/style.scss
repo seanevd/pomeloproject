@@ -73,60 +73,16 @@ header img {
 	margin-right: em(6);
 }
 
-.logo-home {
-	width: em(288);
-	height: em(111);
-	background-image: url("images/pomelo-logo-sprite.png");
-	display: inline-block;
-	background-position: 0 em(-126);
-	transition: all .3s;
-	&:hover {
-		background-position: 0 em(-6);
-		transition: all .3s;
-	}
-}
 
-header {
-	.columns>div {
-		display: inline-block;
-		vertical-align: top;
-		li>a {
-			line-height: 111px;
-			background-color: $black;
-			padding: 0 em(8);
-			&:hover {
-				background-color: $white;
-				color: $black;
-			}
-		}
-	}
-	.columns {
-		height: em(111);
-	}
-	a {
-		display: block;
-	}
-}
+
+
 
 
 .homepage {
 	margin-bottom: 0;
 }
 
-.nav-menu li{
-	display: inline-block;
-	font-size: em(22);
-	a {
-		color: $white;
-		&:visited {
-			color: $white;
-		}
-		&:hover {
-			color: $yellow;
-		}
-	}
 
-}
 
 .nav-menu {
 	margin-left: 0;
@@ -161,14 +117,187 @@ header {
 		}
 	}
 
+	.logo-home {
+		width: em(127);
+		height: em(86);
+		background-image: url("images/pomelo-logo-sprite-sm.png");
+		display: inline-block;
+		background-position: em(-2) em(-21);
+		transition: all .3s;
+	}
+
+	header {
+		.columns>div {
+			display: inline-block;
+			vertical-align: top;
+			&:last-child {
+				display: block;
+			}
+			
+			li>a {
+				line-height: em(36);
+				background-color: $black;
+				padding: 0 em(8);
+				&:hover {
+					background-color: $white;
+					color: $black;
+				}
+			}
+		}
+		.columns {
+		}
+		a {
+			display: block;
+		}
+
+		.nav-menu {
+			ul {
+				width: 100%;
+			}
+			li {
+				display: block;
+				font-size: em(16);
+				a {
+					color: $white;
+					&:visited {
+						color: $white;
+					}
+					&:hover {
+						color: $yellow;
+					}
+				}
+			}
+
+		}
+
+		.nav-toggle {
+			float: right;
+			position: inline-block;
+			margin: em(10) em(10) 0 0;
+			cursor: pointer;
+			color: $white;
+		}
+
+	}
+	.products {
+		margin-left: 0;
+	}
+
 }
 
 //medium screen size (tablet)
 @media only screen and (min-width: 40.063em) {
 
+	.logo-home {
+		width: em(119);
+		height: em(72);
+		background-image: url("images/pomelo-logo-sprite-sm.png");
+		display: inline-block;
+		background-position: em(-8) em(-148);
+		transition: all .3s;
+		&:hover {
+			background-position: em(-8) em(-28);
+			transition: all .3s;
+		}
+	}
+
+	header {
+		.columns>div {
+			display: inline-block;
+			vertical-align: top;
+			&:last-child {
+				display: inline-block;
+			}
+			li>a {
+				line-height: em(64);
+				background-color: $black;
+				padding: 0 em(8);
+				&:hover {
+					background-color: $white;
+					color: $black;
+				}
+			}
+		}
+		.columns {
+			height: em(72);
+		}
+		a {
+			display: block;
+		}
+
+		.nav-menu li{
+			display: inline-block;
+			font-size: em(18);
+			a {
+				color: $white;
+				&:visited {
+					color: $white;
+				}
+				&:hover {
+					color: $yellow;
+				}
+			}
+
+		}
+		.nav-toggle {
+			display: none !important;
+		}
+	}
+	
+
 }
 
 //large screen size (desktop)
 @media only screen and (min-width: 64.063em) {
+
+	.logo-home {
+		width: em(127);
+		height: em(86);
+		background-image: url("images/pomelo-logo-sprite-sm.png");
+		display: inline-block;
+		background-position: em(-2) em(-141);
+		transition: all .3s;
+		&:hover {
+			background-position: em(-2) em(-21);
+			transition: all .3s;
+		}
+	}
+
+	header {
+		.columns>div {
+			display: inline-block;
+			vertical-align: top;
+			li>a {
+				line-height: em(63);
+				background-color: $black;
+				padding: 0 em(8);
+				&:hover {
+					background-color: $white;
+					color: $black;
+				}
+			}
+		}
+		.columns {
+			height: em(86);
+		}
+		a {
+			display: block;
+		}
+
+		.nav-menu li{
+			display: inline-block;
+			font-size: em(22);
+			a {
+				color: $white;
+				&:visited {
+					color: $white;
+				}
+				&:hover {
+					color: $yellow;
+				}
+			}
+
+		}
+	}
 
 }
