@@ -1033,37 +1033,62 @@ header img {
     background-position: -0.125em -1.3125em;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
-  header .columns > div {
-    display: inline-block;
-    vertical-align: top; }
-    header .columns > div:last-child {
+  header {
+    position: relative;
+    z-index: 3; }
+    header .columns > div {
+      display: block;
+      vertical-align: top; }
+      header .columns > div li > a {
+        line-height: 2.25em;
+        background-color: #333333;
+        padding: 0 0.5em; }
+        header .columns > div li > a:hover {
+          background-color: #FBFBEE;
+          color: #333333; }
+    header .nav-home {
+      position: relative;
+      z-index: 4;
+      height: 5.375em; }
+    header #nav-container {
+      position: relative;
+      height: 15em;
+      max-height: 0em;
+      z-index: 2;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s; }
+    header .nav-extend {
+      max-height: 14.375em !important;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s; }
+    header a {
       display: block; }
-    header .columns > div li > a {
-      line-height: 2.25em;
-      background-color: #333333;
-      padding: 0 0.5em; }
-      header .columns > div li > a:hover {
-        background-color: #FBFBEE;
-        color: #333333; }
-  header a {
-    display: block; }
-  header .nav-menu ul {
-    width: 100%; }
-  header .nav-menu li {
-    display: block;
-    font-size: 1em; }
-    header .nav-menu li a {
-      color: #FBFBEE; }
-      header .nav-menu li a:visited {
-        color: #FBFBEE; }
-      header .nav-menu li a:hover {
-        color: #F1EA81; }
-  header .nav-toggle {
-    float: right;
-    position: inline-block;
-    margin: 0.625em 0.625em 0 0;
-    cursor: pointer;
-    color: #FBFBEE; }
+    header .nav-menu {
+      position: absolute;
+      bottom: 0.125em;
+      width: 100%; }
+      header .nav-menu ul {
+        width: 100%; }
+      header .nav-menu li {
+        display: block;
+        font-size: 1em; }
+        header .nav-menu li a {
+          color: #FBFBEE; }
+          header .nav-menu li a:visited {
+            color: #FBFBEE; }
+          header .nav-menu li a:hover {
+            color: #F1EA81; }
+    header #nav-toggle {
+      float: right;
+      position: absolute;
+      top: 0.625em;
+      right: 0.9375em;
+      cursor: pointer;
+      color: #FBFBEE;
+      z-index: 10;
+      height: 4.1875em;
+      width: 4.6875em;
+      background-image: url(images/menu-icon.png); }
   .products {
     margin-left: 0; } }
 
@@ -1096,6 +1121,8 @@ header img {
     height: 4.5em; }
   header a {
     display: block; }
+  header .nav-menu {
+    position: initial; }
   header .nav-menu li {
     display: inline-block;
     font-size: 1.125em; }
@@ -1105,7 +1132,7 @@ header img {
         color: #FBFBEE; }
       header .nav-menu li a:hover {
         color: #F1EA81; }
-  header .nav-toggle {
+  header #nav-toggle {
     display: none !important; } }
 
 @media only screen and (min-width: 64.063em) {
