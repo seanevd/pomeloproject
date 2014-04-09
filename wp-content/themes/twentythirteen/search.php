@@ -17,6 +17,7 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></h1>
 			</header>
+			<p>Awesome</p>
 
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>

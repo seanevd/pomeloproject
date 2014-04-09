@@ -1,4 +1,7 @@
 <?php 
+
+add_theme_support( 'woocommerce' );
+
 /*
 hack to add the description/tagline at the wp_title on homepage
 */

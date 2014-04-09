@@ -12,15 +12,31 @@ get_header(); ?>
 
 <div id="main-content" class="main-content row">
 	<div class="small-12 columns">
-		<?php
-					// Start the Loop.
-					while ( have_posts() ) : the_post();
-						get_template_part( 'content', 'page' );
+		<?php /* The loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						
-					endwhile;
-				?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="entry-header">
+						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+						<div class="entry-thumbnail">
+							<?php the_post_thumbnail(); ?>
+						</div>
+						<?php endif; ?>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					</header><!-- .entry-header -->
+
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+					</div><!-- .entry-content -->
+
+				</article><!-- #post -->
+
+				<?php comments_template(); ?>
+			<?php endwhile; ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
 
 	</div>
 
