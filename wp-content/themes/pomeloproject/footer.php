@@ -2,7 +2,7 @@
 		<footer>
 			<div class="row">
 				<div class="small-12 columns">
-					<p>This is where the footer is going</p>
+					Pomelo Project &copy; <?php echo date("Y") ?>
 				</div>
 			</div>
 			
@@ -20,6 +20,9 @@
 			}
 
 			function addClasstoDrop() {
+				var t3 = document.getElementById("nav-toggle")
+				if (t3.classList)
+					t3.classList.add("nav-toggle-active");
 
 				var t2 = document.getElementById("nav-container")
 				if (t2.classList)
@@ -29,6 +32,10 @@
 			}
 
 			function removeClasstoDrop(){
+				var t4 = document.getElementById("nav-toggle")
+				if (t4.classList)
+					t4.classList.remove("nav-toggle-active");
+
 				var t1 = document.getElementById("nav-container")
 				if (t1.classList)
 					t1.classList.remove("nav-extend");
@@ -38,7 +45,8 @@
 
 			var el = document.getElementById("nav-toggle");
 			el.addEventListener("click", ClasstoDrop, false);
-			el.addEventListener("touchend", ClasstoDrop, false);
+			el.addEventListener("touchleave", ClasstoDrop, false);
+
 		</script>
 	<?php wp_footer(); ?>
 	

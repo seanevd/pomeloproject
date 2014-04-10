@@ -1,6 +1,6 @@
 /*
-Theme Name: Vacant
-Description: This was a basic blank theme that was setup to start developing quickly in Wordpress. Delete this info once a theme is started.
+Theme Name: Pomelo Project
+Description: This is a theme produced for Pomelo Project as a capstone project for Sean Duncan (@seanevd), Jesse Crandall (@jaysliceee), Andrew Olsen (@AndrewOlsen8) and Korry Nielson
 Author: Sean E. Duncan
 Author URI: http://seanevd.com
 Version: 1.0
@@ -985,7 +985,9 @@ header {
 footer {
   margin-top: 1em;
   background-color: #D92232;
-  color: #FBFBEE; }
+  text-align: center;
+  color: #FBFBEE;
+  padding: 2em; }
 
 a {
   color: #3F1316;
@@ -1015,6 +1017,21 @@ header img {
   background-position: center;
   background-repeat: no-repeat;
   color: #FBFBEE; }
+
+.entry-content .woocommerce > .woocommerce-info {
+  border: thin solid #333333;
+  border-radius: 0;
+  background: initial;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .entry-content .woocommerce > .woocommerce-info:before {
+    content: "";
+    background-color: #D92232; }
+
+.label {
+  vertical-align: top;
+  padding-top: 5px;
+  padding-right: 6px; }
 
 @media only screen {
   .banner-text {
@@ -1058,7 +1075,7 @@ header img {
       -webkit-transition: all 0.3s;
       transition: all 0.3s; }
     header .nav-extend {
-      max-height: 14.375em !important;
+      max-height: 9.375em !important;
       -webkit-transition: all 0.3s;
       transition: all 0.3s; }
     header a {
@@ -1088,7 +1105,23 @@ header img {
       z-index: 10;
       height: 4.1875em;
       width: 4.6875em;
-      background-image: url(images/menu-icon.png); }
+      background-image: url(images/menu-icon.png);
+      background-image: url(images/menu-icon.svg); }
+    header .nav-toggle-active {
+      background-image: url(images/menu-icon-active.png) !important;
+      background-image: url(images/menu-icon-active.svg) !important; }
+    header .cart-contents {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 5em;
+      float: right;
+      line-height: 4.875em;
+      font-size: 1.125em;
+      background-image: initial;
+      z-index: 8; }
+      header .cart-contents a {
+        color: #FBFBEE; }
   .products {
     margin-left: 0; } }
 
@@ -1133,7 +1166,25 @@ header img {
       header .nav-menu li a:hover {
         color: #F1EA81; }
   header #nav-toggle {
-    display: none !important; } }
+    display: none !important; }
+  header .nav-toggle-active {
+    display: none !important; }
+  header .cart-contents {
+    position: relative;
+    right: 0em;
+    line-height: 4em;
+    font-size: 1.125em;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+    header .cart-contents a {
+      padding: 0 0.5em; }
+    header .cart-contents:hover {
+      color: #333333;
+      background-color: #FBFBEE;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s; }
+      header .cart-contents:hover a {
+        color: #333333; } }
 
 @media only screen and (min-width: 64.063em) {
   .logo-home {
@@ -1170,4 +1221,7 @@ header img {
       header .nav-menu li a:visited {
         color: #FBFBEE; }
       header .nav-menu li a:hover {
-        color: #F1EA81; } }
+        color: #F1EA81; }
+  header .cart-contents {
+    line-height: 3.9375em;
+    font-size: 1.375em; } }

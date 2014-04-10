@@ -1,6 +1,6 @@
 /*
-Theme Name: Vacant
-Description: This was a basic blank theme that was setup to start developing quickly in Wordpress. Delete this info once a theme is started.
+Theme Name: Pomelo Project
+Description: This is a theme produced for Pomelo Project as a capstone project for Sean Duncan (@seanevd), Jesse Crandall (@jaysliceee), Andrew Olsen (@AndrewOlsen8) and Korry Nielson
 Author: Sean E. Duncan
 Author URI: http://seanevd.com
 Version: 1.0
@@ -55,7 +55,9 @@ header {
 footer {
 	margin-top: 1em;
 	background-color: $red;
+	text-align: center;
 	color: $white;
+	padding: 2em;
 }
 
 a {
@@ -73,16 +75,9 @@ header img {
 	margin-right: em(6);
 }
 
-
-
-
-
-
 .homepage {
 	margin-bottom: 0;
 }
-
-
 
 .nav-menu {
 	margin-left: 0;
@@ -97,6 +92,24 @@ header img {
 	background-repeat: no-repeat;
 	color: $white;
 	
+}
+
+.entry-content .woocommerce > .woocommerce-info {
+
+	border: thin solid #333333;
+	border-radius: 0;
+	background: initial;
+	box-shadow: none;
+	&:before {
+		content: "";
+		background-color: $red;
+	}
+}
+
+.label {
+	vertical-align: top;
+	padding-top: 5px;
+	padding-right: 6px;
 }
 
 
@@ -157,7 +170,7 @@ header img {
 			transition: all 0.3s;	
 		}
 		.nav-extend {
-			max-height: em(230) !important;
+			max-height: em(150) !important;
 			transition: all 0.3s;
 
 			
@@ -202,7 +215,29 @@ header img {
 			height: em(67);
 			width: em(75);
 			background-image: url(images/menu-icon.png);
+			background-image: url(images/menu-icon.svg);
 			
+		}
+
+		.nav-toggle-active {
+			background-image: url(images/menu-icon-active.png) !important;
+			background-image: url(images/menu-icon-active.svg) !important;
+
+		}
+
+		.cart-contents {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: em(80);
+			float: right;
+			line-height: em(78);
+			font-size: em(18);
+			background-image: initial;
+			z-index: 8;
+			a {
+				color: $white;
+			}
 		}
 
 	}
@@ -272,6 +307,27 @@ header img {
 		#nav-toggle {
 			display: none !important;
 		}
+		.nav-toggle-active {
+			display: none !important;
+		}
+		.cart-contents {
+			position: relative;
+			right: em(0);
+			line-height: em(64);
+			font-size: em(18);
+			transition: all .3s;
+			a {
+				padding: 0 em(8);
+			}
+			&:hover {
+				color: $black;
+				background-color: $white;
+				transition: all .3s;
+				a {
+					color: $black;
+				}
+			}
+		}
 	}
 	
 
@@ -327,6 +383,10 @@ header img {
 				}
 			}
 
+		}
+		.cart-contents {
+			line-height: em(63);
+			font-size: em(22);
 		}
 	}
 
