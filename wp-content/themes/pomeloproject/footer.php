@@ -47,6 +47,12 @@
 			el.addEventListener("click", ClasstoDrop, false);
 			el.addEventListener("touchleave", ClasstoDrop, false);
 
+			var resp = document.getElementsByClassName('attachment-shop_catalog');
+			console.log(resp.length + "is the length");
+			for (var i=0; i<resp.length; i++) {
+				resp[i].removeAttribute('width');
+				resp[i].removeAttribute('height');
+			}
 		</script>
 	<?php wp_footer(); ?>
 	
