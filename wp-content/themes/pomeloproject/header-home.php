@@ -21,6 +21,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
 		<title>Pomelo Project</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		
 		<meta name="title" content="<?php
 			if (function_exists('is_tag') && is_tag()) {
