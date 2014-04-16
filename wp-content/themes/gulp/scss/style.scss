@@ -370,6 +370,10 @@ header img {
 			display: block;
 		}
 
+		.nav-menu {
+			position: static !important;
+		}
+
 		.nav-menu li{
 			display: inline-block;
 			font-size: em(22);

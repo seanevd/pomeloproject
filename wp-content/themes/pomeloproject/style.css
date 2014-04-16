@@ -1155,7 +1155,7 @@ header img {
   header a {
     display: block; }
   header .nav-menu {
-    position: initial; }
+    position: relative; }
   header .nav-menu li {
     display: inline-block;
     font-size: 1.125em; }
@@ -1213,6 +1213,8 @@ header img {
     height: 5.375em; }
   header a {
     display: block; }
+  header .nav-menu {
+    position: static !important; }
   header .nav-menu li {
     display: inline-block;
     font-size: 1.375em; }
