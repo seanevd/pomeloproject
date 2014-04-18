@@ -979,8 +979,7 @@ header, footer {
   width: 100%; }
 
 header {
-  margin-bottom: 1em;
-  background-color: #333333; }
+  margin-bottom: 1em; }
 
 footer {
   margin-top: 1em;
@@ -994,7 +993,7 @@ a {
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
   a:hover {
-    color: #7a252c;
+    color: #D92232;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
 
@@ -1016,7 +1015,18 @@ header img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #FBFBEE; }
+  color: #FBFBEE;
+  position: relative;
+  z-index: 6; }
+
+.cart-contents {
+  background-image: url("images/shopping-cart.png");
+  background-image: url("images/shopping-cart.svg");
+  width: 5em;
+  text-align: right;
+  background-repeat: no-repeat;
+  background-position: 0.9375em 1.25em;
+  background-size: 1.875em; }
 
 .entry-content .woocommerce > .woocommerce-info {
   border: thin solid #333333;
@@ -1033,6 +1043,28 @@ header img {
   padding-top: 5px;
   padding-right: 6px; }
 
+.product img {
+  max-width: 100%;
+  width: 100%; }
+
+.product_meta {
+  margin-bottom: 1.25em; }
+
+.shop_attributes th {
+  display: inherit; }
+
+.thumbnails a {
+  margin-right: 2%; }
+  .thumbnails a:last-child {
+    margin-right: 0; }
+.thumbnails img {
+  max-width: 32%;
+  width: 32%;
+  margin-top: 0.5em; }
+
+li .add_to_cart_button {
+  display: none; }
+
 @media only screen {
   .banner-text {
     margin-top: 5.25em;
@@ -1045,9 +1077,10 @@ header img {
   .logo-home {
     width: 7.9375em;
     height: 5.375em;
-    background-image: url("images/pomelo-logo-sprite-sm.png");
+    background-image: url("images/pomelo-green.png");
+    background-color: #FBFBEE;
     display: inline-block;
-    background-position: -0.125em -1.3125em;
+    background-position: -0.3125em 0;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
   header {
@@ -1058,11 +1091,9 @@ header img {
       vertical-align: top; }
       header .columns > div li > a {
         line-height: 2.25em;
-        background-color: #333333;
         padding: 0 0.5em; }
         header .columns > div li > a:hover {
-          background-color: #FBFBEE;
-          color: #333333; }
+          color: #D92232; }
     header .nav-home {
       position: relative;
       z-index: 4;
@@ -1083,18 +1114,19 @@ header img {
     header .nav-menu {
       position: absolute;
       bottom: 0.125em;
-      width: 100%; }
+      width: 100%;
+      padding-left: 0.625em; }
       header .nav-menu ul {
         width: 100%; }
       header .nav-menu li {
         display: block;
         font-size: 1em; }
         header .nav-menu li a {
-          color: #FBFBEE; }
+          color: #333333; }
           header .nav-menu li a:visited {
-            color: #FBFBEE; }
+            color: #333333; }
           header .nav-menu li a:hover {
-            color: #F1EA81; }
+            color: #D92232; }
     header #nav-toggle {
       float: right;
       position: absolute;
@@ -1118,10 +1150,11 @@ header img {
       float: right;
       line-height: 4.875em;
       font-size: 1.125em;
-      background-image: initial;
       z-index: 8; }
       header .cart-contents a {
-        color: #FBFBEE; }
+        color: #333333; }
+        header .cart-contents a:hover {
+          color: #D92232; }
   .products {
     margin-left: 0; } }
 
@@ -1129,15 +1162,11 @@ header img {
   .logo-home {
     width: 7.4375em;
     height: 4.5em;
-    background-image: url("images/pomelo-logo-sprite-sm.png");
+    background-image: url("images/pomelo-green.png");
     display: inline-block;
-    background-position: -0.5em -9.25em;
+    background-position: -0.4375em -0.5em;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
-    .logo-home:hover {
-      background-position: -0.5em -1.75em;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s; }
   header .columns > div {
     display: inline-block;
     vertical-align: top; }
@@ -1145,26 +1174,25 @@ header img {
       display: inline-block; }
     header .columns > div li > a {
       line-height: 4em;
-      background-color: #333333;
       padding: 0 0.5em; }
       header .columns > div li > a:hover {
-        background-color: #FBFBEE;
-        color: #333333; }
+        color: #D92232; }
   header .columns {
     height: 4.5em; }
   header a {
     display: block; }
   header .nav-menu {
-    position: relative; }
+    position: relative;
+    padding-left: 0; }
   header .nav-menu li {
     display: inline-block;
     font-size: 1.125em; }
     header .nav-menu li a {
-      color: #FBFBEE; }
+      color: #333333; }
       header .nav-menu li a:visited {
-        color: #FBFBEE; }
+        color: #333333; }
       header .nav-menu li a:hover {
-        color: #F1EA81; }
+        color: #D92232; }
   header #nav-toggle {
     display: none !important; }
   header .nav-toggle-active {
@@ -1177,38 +1205,30 @@ header img {
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
     header .cart-contents a {
-      padding: 0 0.5em; }
-    header .cart-contents:hover {
-      color: #333333;
-      background-color: #FBFBEE;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s; }
-      header .cart-contents:hover a {
-        color: #333333; } }
+      padding: 0 0.5em;
+      color: #333333; }
+      header .cart-contents a:hover {
+        color: #D92232;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; } }
 
 @media only screen and (min-width: 64.063em) {
   .logo-home {
     width: 7.9375em;
     height: 5.375em;
-    background-image: url("images/pomelo-logo-sprite-sm.png");
+    background-image: url("images/pomelo-green.png");
     display: inline-block;
-    background-position: -0.125em -8.8125em;
+    background-position: -0.0625em 0;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
-    .logo-home:hover {
-      background-position: -0.125em -1.3125em;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s; }
   header .columns > div {
     display: inline-block;
     vertical-align: top; }
     header .columns > div li > a {
       line-height: 3.9375em;
-      background-color: #333333;
       padding: 0 0.5em; }
       header .columns > div li > a:hover {
-        background-color: #FBFBEE;
-        color: #333333; }
+        color: #D92232; }
   header .columns {
     height: 5.375em; }
   header a {
@@ -1219,11 +1239,11 @@ header img {
     display: inline-block;
     font-size: 1.375em; }
     header .nav-menu li a {
-      color: #FBFBEE; }
+      color: #333333; }
       header .nav-menu li a:visited {
-        color: #FBFBEE; }
+        color: #333333; }
       header .nav-menu li a:hover {
-        color: #F1EA81; }
+        color: #D92232; }
   header .cart-contents {
     line-height: 3.9375em;
     font-size: 1.375em; } }

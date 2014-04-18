@@ -49,7 +49,6 @@ header, footer {
 
 header {
 	margin-bottom: 1em;
-	background-color: $black;
 }
 
 footer {
@@ -64,7 +63,7 @@ a {
 	color: $darkred;
 	transition: all .3s;
 	&:hover {
-		color: lighten($darkred, 15%);
+		color: $red;
 		transition: all .3s;
 	}
 }
@@ -91,7 +90,19 @@ header img {
 	background-position: center;
 	background-repeat: no-repeat;
 	color: $white;
+	position: relative;
+	z-index: 6;
 	
+}
+
+.cart-contents {
+	background-image: url("images/shopping-cart.png");
+	background-image: url("images/shopping-cart.svg");
+	width: em(80);
+	text-align: right;
+	background-repeat: no-repeat;
+	background-position: em(15) em(20);
+	background-size: em(30);
 }
 
 .entry-content .woocommerce > .woocommerce-info {
@@ -110,6 +121,39 @@ header img {
 	vertical-align: top;
 	padding-top: 5px;
 	padding-right: 6px;
+}
+
+.product img {
+	max-width: 100%;
+	width: 100%;
+}
+
+.product_meta {
+	margin-bottom: 1.25em;
+}
+
+.shop_attributes {
+	th {
+		display: inherit;
+	}
+}
+
+.thumbnails {
+	a {
+		margin-right: 2%;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	img {
+		max-width: 32%;
+		width: 32%;
+		margin-top: em(8);
+	}
+}
+
+li .add_to_cart_button {
+	display: none;
 }
 
 
@@ -133,9 +177,10 @@ header img {
 	.logo-home {
 		width: em(127);
 		height: em(86);
-		background-image: url("images/pomelo-logo-sprite-sm.png");
+		background-image: url("images/pomelo-green.png");
+		background-color: #FBFBEE;
 		display: inline-block;
-		background-position: em(-2) em(-21);
+		background-position: em(-5) 0;
 		transition: all .3s;
 	}
 
@@ -149,11 +194,9 @@ header img {
 			
 			li>a {
 				line-height: em(36);
-				background-color: $black;
 				padding: 0 em(8);
 				&:hover {
-					background-color: $white;
-					color: $black;
+					color: $red;
 				}
 			}
 		}
@@ -185,6 +228,7 @@ header img {
 			position: absolute;
 			bottom: em(2);
 			width: 100%;
+			padding-left: em(10);
 			ul {
 				width: 100%;
 			}
@@ -192,12 +236,12 @@ header img {
 				display: block;
 				font-size: em(16);
 				a {
-					color: $white;
+					color: $black;
 					&:visited {
-						color: $white;
+						color: $black;
 					}
 					&:hover {
-						color: $yellow;
+						color: $red;
 					}
 				}
 			}
@@ -233,10 +277,12 @@ header img {
 			float: right;
 			line-height: em(78);
 			font-size: em(18);
-			background-image: initial;
 			z-index: 8;
 			a {
-				color: $white;
+				color: $black;
+				&:hover {
+					color: $red;
+				}
 			}
 		}
 
@@ -253,14 +299,10 @@ header img {
 	.logo-home {
 		width: em(119);
 		height: em(72);
-		background-image: url("images/pomelo-logo-sprite-sm.png");
+		background-image: url("images/pomelo-green.png");
 		display: inline-block;
-		background-position: em(-8) em(-148);
+		background-position: em(-7) em(-8);
 		transition: all .3s;
-		&:hover {
-			background-position: em(-8) em(-28);
-			transition: all .3s;
-		}
 	}
 
 	header {
@@ -272,11 +314,9 @@ header img {
 			}
 			li>a {
 				line-height: em(64);
-				background-color: $black;
 				padding: 0 em(8);
 				&:hover {
-					background-color: $white;
-					color: $black;
+					color: $red;
 				}
 			}
 		}
@@ -288,17 +328,18 @@ header img {
 		}
 		.nav-menu {
 			position: relative;
+			padding-left: 0;
 		}
 		.nav-menu li{
 			display: inline-block;
 			font-size: em(18);
 			a {
-				color: $white;
+				color: $black;
 				&:visited {
-					color: $white;
+					color: $black;
 				}
 				&:hover {
-					color: $yellow;
+					color: $red;
 				}
 			}
 
@@ -318,13 +359,10 @@ header img {
 			transition: all .3s;
 			a {
 				padding: 0 em(8);
-			}
-			&:hover {
 				color: $black;
-				background-color: $white;
-				transition: all .3s;
-				a {
-					color: $black;
+				&:hover {
+					color: $red;
+					transition: all .3s;
 				}
 			}
 		}
@@ -339,14 +377,10 @@ header img {
 	.logo-home {
 		width: em(127);
 		height: em(86);
-		background-image: url("images/pomelo-logo-sprite-sm.png");
+		background-image: url("images/pomelo-green.png");
 		display: inline-block;
-		background-position: em(-2) em(-141);
+		background-position: em(-1) 0;
 		transition: all .3s;
-		&:hover {
-			background-position: em(-2) em(-21);
-			transition: all .3s;
-		}
 	}
 
 	header {
@@ -355,11 +389,9 @@ header img {
 			vertical-align: top;
 			li>a {
 				line-height: em(63);
-				background-color: $black;
 				padding: 0 em(8);
 				&:hover {
-					background-color: $white;
-					color: $black;
+					color: $red;
 				}
 			}
 		}
@@ -378,12 +410,12 @@ header img {
 			display: inline-block;
 			font-size: em(22);
 			a {
-				color: $white;
+				color: $black;
 				&:visited {
-					color: $white;
+					color: $black;
 				}
 				&:hover {
-					color: $yellow;
+					color: $red;
 				}
 			}
 

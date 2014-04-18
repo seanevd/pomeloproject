@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-get_header( 'home' ); ?>
+?>
 <div class="row">
 	<div class="small-12 columns">
 		
@@ -24,7 +24,8 @@ get_header( 'home' ); ?>
 		 */
 	?>
 
-		<?php do_action( 'woocommerce_archive_description' ); ?>
+		<?php do_action( 'woocommerce_archive_description' ); 
+		get_header( 'home' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
