@@ -63,7 +63,7 @@
 					<div class="nav-home"><a href="<?php echo home_url('/'); ?>"><div class="logo-home"></div></a></div>
 					<div id="nav-toggle"></div>
 					<?php global $woocommerce; ?>
-					<div class="cart-contents" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><a href="<?php echo get_permalink( get_page_by_path( 'cart' ) ) ?>">Cart (<?php echo sprintf(_n('%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>)</a></div>
+					<div class="cart-contents" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><a href="<?php echo get_permalink( get_page_by_path( 'cart' ) ) ?>">(<?php echo sprintf(_n('%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>)</a></div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'container_id' => 'nav-container' ) ); ?>
 
 
