@@ -15,6 +15,7 @@ $darkred: #3F1316;
 $red: #D92232;
 $brown: #8C6628;
 $black: #333333;
+$green: #A3D180;
 
 $browser-context: 16;
 
@@ -150,6 +151,82 @@ header img {
 		width: 32%;
 		margin-top: em(8);
 	}
+}
+
+.row {
+	position: relative;
+}
+
+div.woocommerce-message, .woocommerce-error, .woocommerce-info {
+	position: absolute;
+	width: em(300);
+	z-index: 99;
+	background-color: #FFFFFF;
+	padding: em(30);
+	right: 0;
+	border: thin solid $black;
+	border-radius: em(2);
+	transition: all .3s;
+	list-style-type: none;
+}
+
+.woocommerce-error {
+	background-color: lighten($red, 15%);
+	color: $white;
+}
+
+#close-message {
+	position: absolute;
+	right: em(-9);
+	top: em(-9);
+	border-radius: 50%;
+	width: em(18);
+	color: $white;
+	text-align: center;
+	height: em(18);
+	background-color: #333;
+	line-height: em(18);
+	font-size: 1.5em;
+	cursor: pointer;
+	transition: all .3s;
+	&:hover {
+		background-color: $red;
+		transition: all .3s;
+	}
+}
+
+a.button.wc-forward {
+	display: table;
+	margin-bottom: em(10);
+	background-color: $black;
+	padding: em(7);
+	color: $white;
+	border-radius: em(2);
+	border-bottom: em(2) solid #000;
+}
+
+.woocommerce .actions input.button.alt, .woocommerce .form-row input.button.alt {
+	background: $green;
+	border: none;
+	border-bottom: em(2) solid darken($green, 25%);
+	&:hover {
+		background: darken($green, 15%);
+	}
+}
+
+.woocommerce .actions input.button, .woocommerce p button.button {
+	background: transparent;
+	box-shadow: none;
+	text-shadow: initial;
+	&:hover {
+		background: transparent;
+		box-shadow: none;
+		text-shadow: initial;
+	}
+}
+
+.woocommerce #order_review #payment {
+	background: transparent;
 }
 
 li .add_to_cart_button {
