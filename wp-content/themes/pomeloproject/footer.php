@@ -4,7 +4,7 @@
 				<div class="small-12 medium-4 columns">
 					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'footer-menu', 'container_id' => 'footer-container' ) ); ?>
 				</div>
-				<div class="small-12 medium-4 columns">
+				<div class="small-12 medium-4 columns copy">
 					Pomelo Project &copy; <?php echo date("Y") ?>
 				</div>
 				<div class="small-12 medium-4 columns social-media">

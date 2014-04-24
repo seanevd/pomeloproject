@@ -1191,6 +1191,9 @@ li .add_to_cart_button {
 .single_variation {
   margin: 1em 0; }
 
+.copy {
+  margin-bottom: 1.25em; }
+
 @media only screen {
   .banner-text {
     margin-top: 5.25em;
@@ -1276,7 +1279,9 @@ li .add_to_cart_button {
       float: right;
       line-height: 4.875em;
       font-size: 1.125em;
-      z-index: 8; }
+      z-index: 8;
+      background-position: 0.9375em 1.75em;
+      margin-right: 0.5em; }
       header .cart-contents a {
         color: #333333; }
         header .cart-contents a:hover {
@@ -1333,7 +1338,8 @@ li .add_to_cart_button {
     line-height: 4em;
     font-size: 1.125em;
     -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    background-position: 0.9375em 1.25em; }
     header .cart-contents a {
       padding: 0 0.5em;
       color: #333333; }
@@ -1341,6 +1347,8 @@ li .add_to_cart_button {
         color: #D92232;
         -webkit-transition: all 0.3s;
         transition: all 0.3s; }
+  .banner-text {
+    margin-top: 6.5em; }
   .footer-menu {
     text-align: left; }
   .social-media {
@@ -1380,4 +1388,6 @@ li .add_to_cart_button {
         color: #D92232; }
   header .cart-contents {
     line-height: 3.9375em;
-    font-size: 1.375em; } }
+    font-size: 1.375em; }
+  .banner-text {
+    margin-top: 7.75em; } }
