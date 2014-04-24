@@ -38,7 +38,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
-	<div class="summary entry-summary small-12 medium-6 columns">
 
 		<?php
 			/**
@@ -59,8 +58,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		$product->list_attributes(); ?>
 
 	</div><!-- .summary -->
-</div>
-	<div class="small-12 columns">
 
 	<?php
 		/**
@@ -72,7 +69,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
 
-</div>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 

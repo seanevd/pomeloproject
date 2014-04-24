@@ -100,7 +100,6 @@ global $woocommerce, $product, $post;
 
 	<?php else : ?>
 
-		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
 
 	<?php endif; ?>
 

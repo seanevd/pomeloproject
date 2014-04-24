@@ -17,6 +17,7 @@ function baw_hack_wp_title_for_home( $title )
 }
 
 register_nav_menu( 'primary', 'Top Navigation' );
+register_nav_menu( 'footer', 'Footer Navigation' );
 
 /*function display_seamstress_image( $atts, $content = null ){
     extract( shortcode_atts( array(
@@ -39,11 +40,14 @@ function display_hero_image( $atts, $content = null ){
     extract( shortcode_atts( array(
         'image' => 'documentary.jpg',
     ), $atts ) );
-    $upload_dir = wp_upload_dir();
-    $image_dir = $upload_dir['baseurl'] . '/assets/' . $image;
+    $re = '/(?<=src=")(.*)(?=-\d{3}x\d{3})/';
+    $str = $image;
+    preg_match($re, $str, $matches);
+
+    $image_dir = $matches[0].'.jpg';
 
     echo '</div></div>';
-    echo '<div class="heroimage" style="background-image:url('. $image_dir .'); width: 100%; height: 500px;">
+    echo '<div class="heroimage" style="background-image:url('. $image_dir .');">
         <div class="row">
           <div class="small-12 columns">
             <div class="banner-text">';
@@ -57,9 +61,8 @@ function display_hero_image( $atts, $content = null ){
 }
 add_shortcode( 'hero', 'display_hero_image' );
 
-//add_shortcode( 'seamstress', 'display_seamstress_image' );
-
 add_image_size( 'widest', 970 );
+add_image_size( 'standard', 600 );
 
 add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
  
@@ -78,62 +81,137 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
   
 }
 
-class WC_Meta_Box_Seamstress_Images {
-
-  /**
-   * Output the metabox
-   */
-  public static function output( $post ) {
+  function WC_Meta_Box_Seamstress_Images( $post ) {
+    wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');
     ?>
-    <div id="product_images_container">
-      <ul class="product_images">
-        <?php
-          if ( metadata_exists( 'post', $post->ID, '_product_seamstress_image' ) ) {
-            $product_seamstress_image = get_post_meta( $post->ID, '_product_seamstress_image', true );
-          } else {
-            // Backwards compat
-            $attachment_ids = get_posts( 'post_parent=' . $post->ID . '&numberposts=-1&post_type=attachment&orderby=menu_order&order=ASC&post_mime_type=image&fields=ids&meta_key=_woocommerce_exclude_image&meta_value=0' );
-            $attachment_ids = array_diff( $attachment_ids, array( get_post_thumbnail_id() ) );
-            $product_seamstress_image = implode( ',', $attachment_ids );
+    <script>
+      ( function( $ ) {
+        $(document).ready(
+          function() {
+            $('#upload_image_button').click(
+              function() {
+                tb_show('', 'media-upload.php?postid=<?php echo $post->ID; ?>&type=image&amp;TB_iframe=true');
+                return false;
+              }
+              );
           }
+          );
+      }) (jQuery);
+      </script>
+      <div class="media-upload">
+          <h2>Upload Media</h2>
+          <table>
+             <tr valign="top">
+                <td><input id="upload_image_button" type="button" value="Upload Media"></td>
+             </tr>
+          </table>
+      </div>
 
-          $attachments = array_filter( explode( ',', $product_seamstress_image ) );
-
-          if ( $attachments )
-            foreach ( $attachments as $attachment_id ) {
-              echo '<li class="image" data-attachment_id="' . esc_attr( $attachment_id ) . '">
-                ' . wp_get_attachment_image( $attachment_id, 'thumbnail' ) . '
-                <ul class="actions">
-                  <li><a href="#" class="delete tips" data-tip="' . __( 'Delete image', 'woocommerce' ) . '">' . __( 'Delete', 'woocommerce' ) . '</a></li>
-                </ul>
-              </li>';
-            }
-        ?>
-      </ul>
-
-      <input type="hidden" id="product_seamstress_image" name="product_seamstress_image" value="<?php echo esc_attr( $product_seamstress_image ); ?>" />
-
-    </div>
-    <p class="add_product_images hide-if-no-js">
-      <a href="#" data-choose="<?php _e( 'Add Seamstress Image', 'woocommerce' ); ?>" data-update="<?php _e( 'Add seamstress image', 'woocommerce' ); ?>" data-delete="<?php _e( 'Delete image', 'woocommerce' ); ?>" data-text="<?php _e( 'Delete', 'woocommerce' ); ?>"><?php _e( 'Full Functionality Coming Soon', 'woocommerce' ); ?></a>
-    </p>
     <?php
   }
 
-  /**
-   * Save meta box data
-   */
-  public static function save( $post_id, $post ) {
-    $attachment_idz = array_filter( explode( ',', wc_clean( $_POST['product_seamstress_image'] ) ) );
-
-    update_post_meta( $post_id, '_product_image_gallery', implode( ',', $attachment_idz ) );
+function admin_scripts()
+  {
+     wp_enqueue_script('media-upload');
+     wp_enqueue_script('thickbox');
   }
-}
+ 
+function admin_styles()
+  {
+     wp_enqueue_style('thickbox');
+  }
+ 
+add_action('admin_print_scripts', 'admin_scripts');
+add_action('admin_print_styles', 'admin_styles');
 
-add_action( 'add_meta_boxes', 'add_seamstress_metaboxes' );
+  function meta_save( $post_id ) {
+    //$attachment_idz = array_filter( explode( ',', wc_clean( $_POST['product_seamstress_image'] ) ) );
+
+    update_post_meta( $post_id, 'seamstress_image_gallery', $_POST['product_seamstress_image'] );
+  }
+
+add_action( 'save_post', 'meta_save');
 
 function add_seamstress_metaboxes() {
-  add_meta_box('wpt_seamstress_content', 'Seamstress Image', 'WC_Meta_Box_Seamstress_Images::output', 'product', 'side', 'low');
+  add_meta_box('wpt_seamstress_content', 'Seamstress Image', 'WC_Meta_Box_Seamstress_Images', 'product', 'side', 'low');
+}
+add_action( 'add_meta_boxes', 'add_seamstress_metaboxes' );
+
+
+
+function display_seamstress_image( $atts, $content = null ){
+  extract( shortcode_atts( array(
+        'image' => 'documentary.jpg',
+    ), $atts ) );
+    $re = '/(?<=src=")(.*)(?=-\d{3}x\d{3})/';
+    $str = $image;
+    preg_match($re, $str, $matches);
+    echo '<div class="small-12 medium-6 columns">';
+    echo $content;
+    echo '</div>';
+    echo '<div class="small-12 medium-6 columns">';
+    echo '<img src="'.$matches[0].'.jpg" alt="'.get_the_title().'">';
+    echo '</div>';
+    //echo ' style="background-image:url('. $image_dir .'); width: 100%; height: 500px;">';
+
+}
+add_shortcode( 'seamstress', 'display_seamstress_image' );
+
+
+function prfx_meta_callback( $post ) {
+    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+    $prfx_stored_meta = get_post_meta( $post->ID );
+    ?>
+ 
+    <p>
+        <label for="meta-text" class="prfx-row-title"><?php _e( 'Social Media URL', 'prfx-textdomain' )?></label>
+        <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $prfx_stored_meta['meta-text'][0]; ?>" />
+    </p>
+ 
+    <?php
+}
+
+function prfx_meta_save( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+ 
+    // Checks for input and sanitizes/saves if needed
+    if( isset( $_POST[ 'meta-text' ] ) ) {
+        update_post_meta( $post_id, 'meta-text', sanitize_text_field( $_POST[ 'meta-text' ] ) );
+    }
+ 
+}
+add_action( 'save_post', 'prfx_meta_save' );
+
+function prfx_custom_meta() {
+    add_meta_box( 'prfx_meta', __( 'URL', 'prfx-textdomain' ), 'prfx_meta_callback', 'social_media' );
+}
+add_action( 'add_meta_boxes', 'prfx_custom_meta' );
+
+
+add_action( 'init', 'create_posttype' );
+function create_posttype() {
+  register_post_type( 'social_media',
+    array(
+      'labels' => array(
+        'name' => __( 'Social Icons' ),
+        'singular_name' => __( 'Social Icon' ),
+        'edit_item' => __( 'Edit Social Media URL' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array( 'title', 'add_meta_boxes' ),
+      'rewrite' => array('slug' => 'social'),
+    )
+  );
 }
 
 

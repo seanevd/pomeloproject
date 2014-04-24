@@ -1,8 +1,39 @@
 		</div>
 		<footer>
 			<div class="row">
-				<div class="small-12 columns">
+				<div class="small-12 medium-4 columns">
+					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'footer-menu', 'container_id' => 'footer-container' ) ); ?>
+				</div>
+				<div class="small-12 medium-4 columns">
 					Pomelo Project &copy; <?php echo date("Y") ?>
+				</div>
+				<div class="small-12 medium-4 columns social-media">
+					<a href="#"></a>
+					
+					<?php 
+
+					$products = new WP_Query( 'post_type=social_media' );
+					get_page_by_title( 'Facebook' );
+					if( $products->have_posts() ) {
+					while( $products->have_posts() ) {
+						$products->the_post();
+						$url = get_post_meta( get_the_ID(), 'meta-text', true );
+						if ( get_the_title() == 'Twitter'){
+							echo '<a href="http://'.$url.'"><span class="twitter"></span></a>';
+						}
+						else if ( get_the_title() == 'Facebook'){
+							echo '<a href="http://'.$url.'"><span class="facebook"></span></a>';
+						}
+						else if ( get_the_title() == 'Instagram'){
+							echo '<a href="http://'.$url.'"><span class="instagram"></span></a>';
+						}
+						else {
+							echo '<a href="http://'.$url.'"><span class="social-unknown"></span></a>';
+						}
+						
+					}
+					}
+					?>
 				</div>
 			</div>
 			

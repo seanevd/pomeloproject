@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 								echo $product->get_price_html();
 
 								if ( ( $availability = $product->get_availability() ) && $availability['availability'] )
-									echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
+									return;
 							?>
 						</td>
 					</tr>

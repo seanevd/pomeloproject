@@ -19,7 +19,7 @@ if ( ! $product->is_purchasable() ) return;
 	$availability = $product->get_availability();
 
 	if ( $availability['availability'] )
-		echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
+		return;
 ?>
 
 <?php if ( $product->is_in_stock() ) : ?>

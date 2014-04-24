@@ -86,7 +86,7 @@ header img {
 
 .heroimage {
 	width: 100%;
-	height: em(500);
+	height: 70%;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -140,6 +140,7 @@ header img {
 }
 
 .thumbnails {
+	margin-bottom: em(22);
 	a {
 		margin-right: 2%;
 		&:last-child {
@@ -173,6 +174,10 @@ div.woocommerce-message, .woocommerce-error, .woocommerce-info {
 .woocommerce-error {
 	background-color: lighten($red, 15%);
 	color: $white;
+}
+
+.products [class*="column"] + [class*="column"]:last-child {
+	float: left;
 }
 
 #close-message {
@@ -225,14 +230,76 @@ a.button.wc-forward {
 	}
 }
 
-.woocommerce #order_review #payment {
-	background: transparent;
-}
-
 li .add_to_cart_button {
 	display: none;
 }
 
+.footer-menu {
+	margin-left: 0;
+	li {
+		display: inline-block;
+		margin-right: em(10);
+	}
+	a {
+		color: $white;
+		&:hover {
+			color: $yellow;
+		}
+	}
+}
+
+.social-media a {
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.instagram, .facebook, .twitter, .social-unknown {
+	width: em(18);
+	height: em(18);
+	display: inline-block;
+	background-repeat: no-repeat;
+	margin-right: em(10);
+}
+.instagram {
+	background-image: url("images/instagram-icon.png");
+	background-image: url("images/instagram-icon.svg");
+}
+.facebook {
+	background-image: url("images/facebook-icon.png");
+	background-image: url("images/facebook-icon.svg");
+}
+.twitter {
+	background-image: url("images/twitter-icon.png");
+	background-image: url("images/twitter-icon.svg");
+}
+.social-unknown {
+	width: em(16);
+	height: em(16);
+	background-color: $white;
+	border-radius: 50%;
+}
+
+.stock {
+	display: none;
+}
+
+.variations_button {
+	margin: 1em 0;
+}
+
+.reset_variations {
+	font-size: 90%;
+	color: #444444;
+}
+
+.price {
+	font-size: 125%;
+}
+
+.single_variation {
+	margin: 1em 0;
+}
 
 //smallest screen size (mobile)
 @media only screen {
@@ -368,6 +435,15 @@ li .add_to_cart_button {
 		margin-left: 0;
 	}
 
+	.footer-menu {
+		text-align: center;
+	}
+
+	.social-media {
+		text-align: center;
+	}
+
+
 }
 
 //medium screen size (tablet)
@@ -443,6 +519,14 @@ li .add_to_cart_button {
 				}
 			}
 		}
+	}
+
+	.footer-menu {
+		text-align: left;
+	}
+
+	.social-media {
+		text-align: right;
 	}
 	
 
